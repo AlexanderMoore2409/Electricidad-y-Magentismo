@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Programa para calcular ley de Coulomb y campo electrico</title>
+</head>
+<body>
+
+
+<script type="text/javascript">
+
+//Opciones
+let ope=0
+let opc= prompt("Elige la operación que deseas realizar, ingresando el numero correspondiente y dando click en Aceptar: \n 1. Explicación de ley de coulomb \n 2. Explicación de campo electrico \n 3. Calcular F usando Ley de Coulomb \n 4. Calcular E usando Campo Electrico \n 5. Calcular E usando K,q1 y d \n 6. Calcular d usando K,q1,q2 y F ")
+
+//Switch para escoger el tipo de operacion
+switch(opc)
+{
+//Caso para definir Ley de Coulomb
+case "1":
+document.write("Explicación Ley de Coulomb");
+document.write("<br>");
+document.write("<br>");
+document.write("<br>");
+document.write("<br>");
+document.write("La ley de Coulomb establece la fuerza eléctrica entre dos cargas eléctricas puntuales."+"<br>"+
+	" Esta ley fue formulada por el físico francés Charles-Augustin de Coulomb en el siglo XVIII."+"<br>"+
+	" La ley de Coulomb establece que la fuerza eléctrica entre dos cargas eléctricas es proporcional al producto de las cargas eléctricas e inversamente proporcional al cuadrado de la distancia entre ellas."+"<br>"+
+	"Matemáticamente, la ley de Coulomb se puede expresar de la siguiente manera:"+"<br>"+
+	" F = k * (q1 * q2) / r^2"+"<br>"+
+	"Donde: F es la fuerza eléctrica entre las dos cargas k es la constante de Coulomb, que depende del medio en el que se encuentran las cargas y se utiliza para convertir unidades de carga y distancia a unidades de fuerza q1 y q2 son las cargas eléctricas de las dos objetos en cuestión, r es la distancia entre los objetos");
+document.write("<br>");
+document.write("<br>");
+document.write("<br>");
+document.write("<br>");
+break
+
+//Caso para definir Camnpo electrico
+case "2":
+document.write("Explicación del Campo Electrico");
+document.write("<br>");
+document.write("<br>");
+document.write("<br>");
+document.write("<br>");
+document.write("El campo eléctrico es una propiedad física que se encuentra presente en cualquier región del espacio donde existen cargas eléctricas, y se define como la fuerza eléctrica que una carga eléctrica puntual experimentaría si estuviera presente en ese punto del espacio. Para entender esto mejor, podemos pensar en que el campo eléctrico es un campo de fuerzas que actúa sobre las cargas eléctricas."+"<br>"+
+	" Si en un punto del espacio hay una carga eléctrica, esa carga se ve sometida a la influencia de las fuerzas eléctricas que actúan sobre ella, y estas fuerzas están determinadas por el campo eléctrico en ese punto."+"<br>"+
+	" El campo eléctrico se puede calcular utilizando la ley de Coulomb. Si tenemos una carga puntual q1, el campo eléctrico en un punto del espacio se define como la fuerza eléctrica que actúa sobre una carga de prueba q2 situada en ese punto, dividida por la carga de prueba:"+"<br>"+
+	"E = F / q2 Donde E es la magnitud del campo eléctrico en ese punto, "+"<br>"+
+	"F es la fuerza eléctrica que actúa sobre la carga de prueba y q2 es la carga de prueba."+"<br>"+
+	" El campo eléctrico tiene una dirección y una magnitud en cada punto del espacio, y su dirección está dada por la dirección de la fuerza eléctrica que actúa sobre la carga de prueba q2."+"<br>"+
+	" La magnitud del campo eléctrico en un punto del espacio se mide en unidades de voltios por metro (V/m).");
+document.write("<br>");
+document.write("<br>");
+document.write("<br>");
+document.write("<br>");
+break
+
+//Caso para calcular F
+case "3":
+k = 9e9;
+let q1=parseFloat(prompt("Escriba el valor de q1: "));
+let q2=parseFloat(prompt("Escriba el valor de q2: "));
+let r=parseFloat(prompt("Escriba el valo de r: "));
+ope=k*q1*q2/(r^2);
+document.write("Usando la siguiente Formula");
+document.write("<br>");
+document.write(" F=k*q1*q2/r^2");
+document.write("<br>");
+document.write("Tu resultado es:");
+document.write("<br>");
+document.write("F= "+ope+"N");
+document.write("<br>");
+document.write("<br>");
+document.write("<br>");
+document.write("<br>");
+break
+
+//Caso para calcular E
+case "4":
+let F=parseFloat(prompt("Escriba el valor de F: "));
+let q0=parseFloat(prompt("Escriba el valor de q0: "));
+ope=F/q0;
+document.write("E= "+ope)
+document.write("<br>");
+document.write("<br>");
+document.write("<br>");
+document.write("<br>");
+break
+
+//caso para calcular E
+case "5":
+let q3=parseFloat(prompt("Escriba el valor de q1 "));
+let d=parseFloat(prompt("Escriba el valor de d "));
+ope=k*q3/(d^2);
+document.write("E= "+ope);
+document.write("<br>");
+document.write("<br>");
+document.write("<br>");
+document.write("<br>");
+break
+
+//caso para calcular e
+case "6":
+let q4=parseFloat(prompt("Escriba el valor de q1 "));
+let q5=parseFloat(prompt("Escriba el valor de q2 "));
+let F2=parseFloat(prompt("Escriba el valor de F: "));
+ope=k*q3*q4/(F2);
+document.write("E= "+ope);
+document.write("<br>");
+document.write("<br>");
+document.write("<br>");
+document.write("<br>");
+break
+
+default:
+document.write("seleccion no válida, porfavor vuelva a intentarlo")
+document.write("<br>")
+document.write("<br>")
+}
+</script>
+
+<button onclick="refrescarPagina();">Click aqui para volver al menu de opciones</button>
+ <script>
+        window.onload = () => {
+            setTimeout(() => {
+                document.getElementsByTagName('body')[0].style.backgroundColor = 'white';
+            }, 3000);
+        }
+
+        function refrescarPagina() {
+            location.reload();
+        }
+ </script>
+
+
+</body>
+</html>
