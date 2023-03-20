@@ -1,5 +1,8 @@
-﻿1. De click derecho sobre el archivo de extensión: “.rar”.
-2. De click izquierdo en la opción “Extraer en Examen 2/”.
-3. De doble click sobre la carpeta, despues da doble clcick sobre 
+﻿1. al abrir el archivo en el classroom de click sobre los 3 puntos del extremo superior derecho
+2. De click en "abrir en nueva ventana"
+3. De clcik en el icono de descarga
+4. De click derecho sobre el archivo de extensión: “.rar”.
+5. De click izquierdo en la opción “Extraer en Examen 2/”.
+6. De doble click sobre la carpeta, despues da doble clcick sobre 
 el programa Examen 2.html y este abrirá su navegador, 
 desde donde usted lo manejara.
