@@ -12,8 +12,9 @@
 
 //Establecer las opciones que se usaran en el programa
 let ope=0
-let opc= prompt("Elige la operación que deseas realizar, para hacerlo: ingresa el numero correspondiente y da click en Aceptar: \n 1. Explicación de ley de coulomb \n 2. Explicación de campo electrico \n 3. Ley de Coulomb, calcular Fuerza Usando la formula: F = K*q1*q2/r^2 \n 4. Campo Electrico, Calcular campo electrico usando la formula: E = F/q0  \n 5. Campo Electrico,  Calcular la Fuerza que experimenta una carga usando F = E*q")
-const k=parseFloat(9e9);
+let opc= prompt("Elige la operación que deseas realizar, para hacerlo: ingresa el numero correspondiente y da click en Aceptar: \n 1. Explicación de ley de coulomb \n 2. Explicación de campo electrico \n 3. Ley de Coulomb, calcular Fuerza Usando la formula: F = K*q1*q2/r^2 \n 4. Ley de Coulomb, Calcular Distancia Usando la formula: r=√K*q1*q2/F  \n 5. Ley de Coulomb, Calcular la Carga electrica, usando la formula: q1=Fr^2/Kq2   \n 6. Campo Electrico, Calcular campo electrico usando la formula: E = F/q0  \n 7. Campo Electrico,  Calcular la Fuerza que experimenta una carga usando F = E*q0")
+const k =9e9
+const r = Math.sqrt(k * q1 * q2 / f); // Math.sqrt es para obtener raiz cuadrada
 //Switch para escoger el tipo de operacion
 switch(opc)
 {
@@ -58,16 +59,22 @@ break
 
 //Caso para calcular F
 case "3":
-k = 9*9;
-let q1=parseFloat(prompt("Escriba el valor de q1: "));
-let q2=parseFloat(prompt("Escriba el valor de q2: "));
-let r=parseFloat(prompt("Escriba el valo de r: "));
-ope=k*q1*q2/(r*r);
-document.write("Usando la siguiente Formula");
+prompt("Bienvenido en esta opcion empleamos la formula: F=k*q1*q2/r^2, Presiona Enter para continuar!!");
+let q1=parseFloat(prompt("Escriba el valor de q1: y despues presione enter para avanzar"));
+let q2=parseFloat(prompt("Escriba el valor de q2: y despues presione enter para avanzar"));
+let d=parseFloat(prompt("Escriba el valor de r: y despues presione enter para avanzar"));
+ope=k*q1*q2/(d*d);
+document.write("Usando la siguiente Formula:");
+document.write("<br>");
+document.write("<br>");
 document.write("<br>");
 document.write(" F=k*q1*q2/r^2");
 document.write("<br>");
+document.write("<br>");
+document.write("<br>");
 document.write("Tu resultado es:");
+document.write("<br>");
+document.write("<br>");
 document.write("<br>");
 document.write("F= "+ope+" N");
 document.write("<br>");
@@ -78,13 +85,43 @@ break
 
 //Caso para calcular E
 case "4":
-let F=parseFloat(prompt("Escriba el valor de F: "));
-let q0=parseFloat(prompt("Escriba el valor de q0: "));
-ope=F/q0;
+prompt("Bienvenido en esta opcion empleamos la formula: r=√K*q1*q2/F, Presiona Enter para continuar!!");
+let q3=parseFloat(prompt("Escriba el valor de q1:  y despues presione enter para avanzar"));
+let q4=parseFloat(prompt("Escriba el valor de q2:  y despues presione enter para avanzar"));
+let F1=parseFloat(prompt("Escriba el valor de F:  y despues presione enter para avanzar"));
+ope=r;
 document.write("Usando la siguiente Formula:");
 document.write("<br>");
 document.write("<br>");
-document.write("E = F/q0");
+document.write("<br>");
+document.write("E = r=√K*q1*q2/F");
+document.write("<br>");
+document.write("<br>");
+document.write("<br>");
+document.write("Tu resultado es:");
+document.write("<br>");
+document.write("<br>");
+document.write("<br>");
+document.write("E= "+ope+" V/m")
+document.write("<br>");
+document.write("<br>");
+document.write("<br>");
+document.write("<br>");
+break
+
+//Caso para calcular E
+case "5":
+prompt("Bienvenido en esta opcion empleamos la formula: q1=Fr^2/Kq2, Presiona Enter para continuar!!");
+let f2=parseFloat(prompt("Escriba el valor de F:  y despues presione enter para avanzar"));
+let r2=parseFloat(prompt("Escriba el valor de r:   y despues presione enter para avanzar"));
+let q5=parseFloat(prompt("Escriba el valor de q2:  y despues presione enter para avanzar"));
+ope=f2*(r2*r2)/k*q5;
+document.write("Usando la siguiente Formula:");
+document.write("<br>");
+document.write("<br>");
+document.write("<br>");
+document.write("q1=Fr^2/Kq2");
+document.write("<br>");
 document.write("<br>");
 document.write("<br>");
 document.write("Tu resultado es:");
@@ -96,19 +133,47 @@ document.write("<br>");
 document.write("<br>");
 document.write("<br>");
 break
+//Caso para calcular E
+case "6":
+prompt("Bienvenido en esta opcion empleamos la formula: F/q0, Presiona Enter para continuar!!");
+let F3=parseFloat(prompt("Escriba el valor de F:  y despues presione enter para avanzar"));
+let q6=parseFloat(prompt("Escriba el valor de q0:  y despues presione enter para avanzar"));
+ope=F3/q6;
+document.write("Usando la siguiente Formula:");
+document.write("<br>");
+document.write("<br>");
+document.write("<br>");
+document.write("E = F/q0");
+document.write("<br>");
+document.write("<br>");
+document.write("<br>");
+document.write("Tu resultado es:");
+document.write("<br>");
+document.write("<br>");
+document.write("<br>");
+document.write("E= "+ope+" V/m")
+document.write("<br>");
+document.write("<br>");
+document.write("<br>");
+document.write("<br>");
+break
 
 //caso para calcular E
-case "5":
-let q3=parseFloat(prompt("Escriba el valor de q "));
-let E=parseFloat(prompt("Escriba el valor de E: "));
-ope=E*q3;
+case "7":
+prompt("Bienvenido en esta opcion empleamos la formula: E*q, Presiona Enter para continuar!!");
+let q7=parseFloat(prompt("Escriba el valor de q  y despues presione enter para avanzar"));
+let E9=parseFloat(prompt("Escriba el valor de E:  y despues presione enter para avanzar"));
+ope=E9*q7;
 document.write("Usando la siguiente Formula:");
+document.write("<br>");
 document.write("<br>");
 document.write("<br>");
 document.write("F = E*q");
 document.write("<br>");
 document.write("<br>");
+document.write("<br>");
 document.write("Tu resultado es:");
+document.write("<br>");
 document.write("<br>");
 document.write("<br>");
 document.write("E= "+ope +" N");
