@@ -10,10 +10,10 @@
 
 <script type="text/javascript">
 
-//Opciones
+//Establecer las opciones que se usaran en el programa
 let ope=0
-let opc= prompt("Elige la operación que deseas realizar, ingresando el numero correspondiente y dando click en Aceptar: \n 1. Explicación de ley de coulomb \n 2. Explicación de campo electrico \n 3. Calcular F usando Ley de Coulomb \n 4. Calcular E usando Campo Electrico \n 5. Calcular E usando K,q1 y d \n 6. Calcular d usando K,q1,q2 y F ")
-
+let opc= prompt("Elige la operación que deseas realizar, para hacerlo: ingresa el numero correspondiente y da click en Aceptar: \n 1. Explicación de ley de coulomb \n 2. Explicación de campo electrico \n 3. Ley de Coulomb, calcular Fuerza Usando la formula: F = K*q1*q2/r^2 \n 4. Campo Electrico, Calcular campo electrico usando la formula: E = F/q0  \n 5. Campo Electrico,  Calcular la Fuerza que experimenta una carga usando F = E*q")
+const k=parseFloat(9e9);
 //Switch para escoger el tipo de operacion
 switch(opc)
 {
@@ -58,18 +58,18 @@ break
 
 //Caso para calcular F
 case "3":
-k = 9e9;
+k = 9*9;
 let q1=parseFloat(prompt("Escriba el valor de q1: "));
 let q2=parseFloat(prompt("Escriba el valor de q2: "));
 let r=parseFloat(prompt("Escriba el valo de r: "));
-ope=k*q1*q2/(r^2);
+ope=k*q1*q2/(r*r);
 document.write("Usando la siguiente Formula");
 document.write("<br>");
 document.write(" F=k*q1*q2/r^2");
 document.write("<br>");
 document.write("Tu resultado es:");
 document.write("<br>");
-document.write("F= "+ope+"N");
+document.write("F= "+ope+" N");
 document.write("<br>");
 document.write("<br>");
 document.write("<br>");
@@ -81,7 +81,16 @@ case "4":
 let F=parseFloat(prompt("Escriba el valor de F: "));
 let q0=parseFloat(prompt("Escriba el valor de q0: "));
 ope=F/q0;
-document.write("E= "+ope)
+document.write("Usando la siguiente Formula:");
+document.write("<br>");
+document.write("<br>");
+document.write("E = F/q0");
+document.write("<br>");
+document.write("<br>");
+document.write("Tu resultado es:");
+document.write("<br>");
+document.write("<br>");
+document.write("E= "+ope+" V/m")
 document.write("<br>");
 document.write("<br>");
 document.write("<br>");
@@ -90,23 +99,19 @@ break
 
 //caso para calcular E
 case "5":
-let q3=parseFloat(prompt("Escriba el valor de q1 "));
-let d=parseFloat(prompt("Escriba el valor de d "));
-ope=k*q3/(d^2);
-document.write("E= "+ope);
+let q3=parseFloat(prompt("Escriba el valor de q "));
+let E=parseFloat(prompt("Escriba el valor de E: "));
+ope=E*q3;
+document.write("Usando la siguiente Formula:");
 document.write("<br>");
 document.write("<br>");
+document.write("F = E*q");
 document.write("<br>");
 document.write("<br>");
-break
-
-//caso para calcular e
-case "6":
-let q4=parseFloat(prompt("Escriba el valor de q1 "));
-let q5=parseFloat(prompt("Escriba el valor de q2 "));
-let F2=parseFloat(prompt("Escriba el valor de F: "));
-ope=k*q3*q4/(F2);
-document.write("E= "+ope);
+document.write("Tu resultado es:");
+document.write("<br>");
+document.write("<br>");
+document.write("E= "+ope +" N");
 document.write("<br>");
 document.write("<br>");
 document.write("<br>");
@@ -114,9 +119,9 @@ document.write("<br>");
 break
 
 default:
-document.write("seleccion no válida, porfavor vuelva a intentarlo")
-document.write("<br>")
-document.write("<br>")
+document.write("seleccion no válida, porfavor vuelva a intentarlo");
+document.write("<br>");
+document.write("<br>");
 }
 </script>
 
